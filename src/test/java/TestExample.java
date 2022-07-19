@@ -11,8 +11,8 @@ public class TestExample {
    @Test
    public void testNode()
    {
-     Node<Integer> b = new Node<Integer(7);
-     Node<Integer> a = new Node<Integer(18, b);
+     Node<Integer> b = new Node<Integer>(7);
+     Node<Integer> a = new Node<Integer>(18, b);
 
      int v = a.getValue();
      assertEquals(v, 18);
