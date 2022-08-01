@@ -25,6 +25,8 @@ public class TestExample {
    @Test
    public void testOutput()
    {
+      PrintStream originalOut = System.out;
+
       ByteArrayOutputStream outContent = new ByteArrayOutputStream();
       System.setOut(new PrintStream(outContent));
       
@@ -32,5 +34,7 @@ public class TestExample {
       Node<Integer> a = new Node<Integer>(18, b);
       System.out.println(a);
       assertEquals("18 ==> 7 ==> null\n", outContent.toString());
+      
+      System.setOut(originalOut);
    }
 }
