@@ -1,3 +1,5 @@
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -29,6 +31,6 @@ public class TestExample {
       Node<Integer> b = new Node<Integer>(7);
       Node<Integer> a = new Node<Integer>(18, b);
       System.out.println(a);
-      assertEquals("18 ==> 7 ==> null", outContent.toString());
+      assertEquals("18 ==> 7 ==> null\n", outContent.toString());
    }
 }
