@@ -7,16 +7,28 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 public class TestExample {
-
+   
    @Test
    public void testNode()
    {
-     Node<Integer> b = new Node<Integer>(7);
-     Node<Integer> a = new Node<Integer>(18, b);
+      Node<Integer> b = new Node<Integer>(7);
+      Node<Integer> a = new Node<Integer>(18, b);
 
-     int v = a.getValue();
-     assertEquals(v, 18);
+      int v = a.getValue();
+      assertEquals(v, 18);
      
-     assertEquals(a.getNext(), b);          
+      assertEquals(a.getNext(), b);          
+   }
+   
+   @Test
+   public void testOutput()
+   {
+      ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+      System.setOut(new PrintStream(outContent));
+      
+      Node<Integer> b = new Node<Integer>(7);
+      Node<Integer> a = new Node<Integer>(18, b);
+      System.out.println(a);
+      assertEquals("18 ==> 7 ==> null", outContent.toString());
    }
 }
